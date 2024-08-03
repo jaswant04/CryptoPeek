@@ -12,12 +12,14 @@ const Search = ({setIsOpen}) => {
             return;
         }
         if (searchTerm) {
-            navigate(`/${searchTerm}`);
+            const id = searchTerm.toLowerCase();
+            navigate(`/${id}`);
             setSearch("");
             setIsOpen(false);
         }
 
     }
+    
     return (
         <div className='bg-white rounded-md text-black mx-auto lg:mr-4'>
             <input
