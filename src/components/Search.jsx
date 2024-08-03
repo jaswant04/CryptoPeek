@@ -7,8 +7,9 @@ const Search = ({setIsOpen}) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        if (searchTerm === '') {
+        if (!searchTerm.trim()) {
             alert("Please enter coin name first.");
+            return;
         }
         if (searchTerm) {
             navigate(`/${searchTerm}`);
@@ -24,10 +25,10 @@ const Search = ({setIsOpen}) => {
                 value={searchTerm}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder='search crypto...'
-                className='input-search lg:pr-14 my-2 mx-4' />
+                className='input-search lg:pr-14 my-2 md:mx-4 ' />
             <button
                 onClick={handleClick}
-                className='search-btn px-4 py-2 ml-4 bg-indigo-950 text-gray-400 hover:text-white mr-1 rounded-md'
+                className='search-btn xxs:px-2 xxl:ml-0 md:px-4 py-2 md:ml-4 bg-indigo-950 text-gray-400 hover:text-white rounded-md'
                 type='submit'
             >Search</button>
         </div>
