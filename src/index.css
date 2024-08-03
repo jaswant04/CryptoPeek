@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    
+    scrollbar-width: none;
+}
+
+body {
+    background: linear-gradient(to bottom, #0A0A23 0%, #141439 50%, #1C1C47 100%);
+    background-position: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#root {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+}
+.a-tag a{
+    border-bottom: 1px solid #fff;
+}
+.a-tag a:hover{
+    color:rgb(236, 27, 27);
+}
+@media (max-width:768px ) {
+    #root{
+        max-width: 100vw;
+    }
+}

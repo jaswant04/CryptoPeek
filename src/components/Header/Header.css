@@ -1,0 +1,115 @@
+/* CSS variables for light and dark mode */
+:root {
+    --primary-dark-blue: #1C1C2B;
+    --primary-bright-blue: #2A2A49;
+    --primary-white: #FFFFFF;
+    --secondary-purple: #5C4D9D;
+    --secondary-light-gray: #E5E5E5;
+    --secondary-green: #33CC99;
+    --secondary-red: #FF6B6B;
+
+    --background-color: var(--primary-white);
+    --text-color: var(--primary-dark-blue);
+    --nav-background-color: var(--primary-bright-blue);
+    --nav-text-color: var(--primary-white);
+    --burger-line-color: var(--primary-white);
+    --hover-background-color: var(--secondary-purple);
+    --hover-text-color: var(--primary-white);
+}
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: var(--nav-text-color);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--nav-text-color);
+    text-decoration: none;
+    padding-left: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    z-index: 3;
+}
+
+.nav-item {
+    margin-left: 0.5;
+}
+
+.nav-link {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    margin: 0.5rem 1rem;
+    border-radius: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    color:#7e22ce;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--burger-line-color);
+    margin: 4px 0;
+    transition: background-color 0.4s;
+}
+
+.burger-menu:hover .line {
+    background-color: var(--hover-text-color);
+}
+
+@media (max-width: 900px) {
+    .nav-list {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--nav-background-color);
+        width: 100%;
+        transition: left 0.3s ease-in-out;
+        gap: 0;
+    }
+
+    .nav-list.open {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+    }
+    .burger-menu {
+        display: flex;
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+    .logo{
+        margin-left: 0;
+    }
+    .nav-link{
+        padding: 0;
+        margin: 0;
+    }
+
+}
